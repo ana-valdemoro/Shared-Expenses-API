@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.shared.expenses.api.sharedexpensesapi.Models.Friend;
 import com.shared.expenses.api.sharedexpensesapi.Repositories.FriendRepository;
 
@@ -26,8 +25,6 @@ public class FriendController {
     
     @PostMapping
     public Friend createFriend(@RequestBody Friend friend) {
-        System.out.println(friend);
         return repository.save(friend);
-       
     }
 }
