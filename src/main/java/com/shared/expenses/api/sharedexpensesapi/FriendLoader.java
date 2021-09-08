@@ -2,10 +2,11 @@ package com.shared.expenses.api.sharedexpensesapi;
 
 import com.shared.expenses.api.sharedexpensesapi.Models.Friend;
 import com.shared.expenses.api.sharedexpensesapi.Repositories.FriendRepository;
-
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+@Order(value = 1)
 @Component
 public class FriendLoader implements CommandLineRunner {
     public final FriendRepository friendRepository;
