@@ -6,10 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
-import org.hibernate.annotations.CreationTimestamp;
 
 
 @Entity( name= "Expenses")
@@ -22,9 +18,9 @@ public class Expense {
     private float value; 
     @Column
     private String description;
-    @ManyToOne
-    @JoinColumn
-    private Friend person;
+    // @ManyToOne
+    // @JoinColumn(name="id", nullable=false)
+    // private Friend person;
     @Column
     private LocalDate date;
 
@@ -32,10 +28,12 @@ public class Expense {
         this.value = value;
         this.description = description;
         this.date  = LocalDate.parse(date);
+        // this.person = person;
     }
     public Expense(){}
     public Long getId(){ return id;}
     public float getValue(){ return value;}
     public String getDescription(){ return description;}
+    // public Friend getPerson(){ return person;}
     public LocalDate getDate(){ return date;}
 }
