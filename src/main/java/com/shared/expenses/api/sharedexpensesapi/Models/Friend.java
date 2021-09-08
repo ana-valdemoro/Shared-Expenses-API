@@ -9,7 +9,7 @@ import javax.persistence.Id;
 @Entity(name = "Friends")
 public class Friend {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(updatable = false, nullable = false)
     private Long id;
     @Column
@@ -27,4 +27,7 @@ public class Friend {
     public Long getId(){ return id;}
     public String getLastName(){ return lastName;}
     public String getName(){return name;}
+    // public float getSaldo(){
+    //     return
+    // }
 }
