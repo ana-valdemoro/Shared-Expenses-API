@@ -17,7 +17,7 @@ public class Expense {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(updatable = false, nullable = false)
-    private long id;
+    private Long id;
     @Column
     private float value; 
     @Column
@@ -35,6 +35,7 @@ public class Expense {
         this.person = person;
         this.date = date;
     }
+    public Expense(){}
 
     public float getValue(){ return value;}
     public String getDescription(){ return description;}

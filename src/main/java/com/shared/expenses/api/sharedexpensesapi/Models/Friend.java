@@ -5,26 +5,23 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "Friends")
+@Entity(name = "Friends")
 public class Friend {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(updatable = false, nullable = false)
-    private long id;
+    private Long id;
     @Column
     private String name;
     @Column
     private String lastName;
 
 
-
-    public Friend(String name, String lastName, long id){
+    public Friend(){}
+    public Friend(String name, String lastName){
         this.name = name;
         this.lastName = lastName;
-        this.id = id;
     }
 
     public Long getId(){ return id;}
