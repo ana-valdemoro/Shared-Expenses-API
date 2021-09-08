@@ -1,5 +1,5 @@
 package com.shared.expenses.api.sharedexpensesapi.Models;
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,7 +15,7 @@ import org.hibernate.annotations.CreationTimestamp;
 @Entity( name= "Expenses")
 public class Expense {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(updatable = false, nullable = false)
     private Long id;
     @Column
@@ -26,19 +26,16 @@ public class Expense {
     @JoinColumn
     private Friend person;
     @Column
-    @CreationTimestamp
-    private Date date;
+    private LocalDate date;
 
-    public Expense(float value, String description, Friend person, Date date){
+    public Expense(float value, String description, String date){
         this.value = value;
         this.description = description;
-        this.person = person;
-        this.date = date;
+        this.date  = LocalDate.parse(date);
     }
     public Expense(){}
-
+    public Long getId(){ return id;}
     public float getValue(){ return value;}
     public String getDescription(){ return description;}
-    public Friend getPerson(){ return person;}
-    public Date getDate(){ return date;}
+    public LocalDate getDate(){ return date;}
 }
