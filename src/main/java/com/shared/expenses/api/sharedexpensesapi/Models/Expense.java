@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 
 @Entity( name= "Expenses")
@@ -18,22 +20,22 @@ public class Expense {
     private float value; 
     @Column
     private String description;
-    // @ManyToOne
-    // @JoinColumn(name="id", nullable=false)
-    // private Friend person;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "fk_friend",  nullable = false )
+    private Friend friend;
     @Column
     private LocalDate date;
 
-    public Expense(float value, String description, String date){
+    public Expense(float value, String description, String date, Friend friend){
         this.value = value;
         this.description = description;
         this.date  = LocalDate.parse(date);
-        // this.person = person;
+        this.friend = friend;
     }
     public Expense(){}
     public Long getId(){ return id;}
     public float getValue(){ return value;}
     public String getDescription(){ return description;}
-    // public Friend getPerson(){ return person;}
+    public Friend getFriend(){ return friend;}
     public LocalDate getDate(){ return date;}
 }

@@ -10,8 +10,7 @@ import javax.persistence.Id;
 public class Friend {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(updatable = false, nullable = false)
-    private Long id;
+    @Column( insertable = false ,updatable = false, nullable = false) Long id;
     @Column
     private String name;
     @Column
