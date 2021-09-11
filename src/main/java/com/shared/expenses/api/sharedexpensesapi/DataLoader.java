@@ -21,20 +21,20 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        loadFriends();
+        loadData();
     }
 
-    private void loadFriends() {
-        if (friendRepository.count() == 0) {
+    private void loadData() {
+        if (friendRepository.count() == 0 && expenseRepository.count() == 0) {
             Friend friend1 = new Friend("Ana", "Valdemoro");
             Friend friend2 = new Friend("Sara", "Valdemoro");
             friendRepository.save(friend1);
             friendRepository.save(friend2);
             expenseRepository.save(
-                new Expense(21.11f , "Cena", "2018-04-05", friend1 )
+                new Expense(100.00f , "Cena", "2018-04-05", friend1 )
             );
             expenseRepository.save(
-                new Expense(11.11f , "Almuerzo", "2020-04-05", friend2)
+                new Expense(50.00f , "Almuerzo", "2020-04-05", friend2)
             );
             System.out.println("Sample friends and expenses loaded");
         }
