@@ -4,16 +4,15 @@ public class Balance {
     private Friend friend;
     private float value;
 
-    public void setValue(float value) {
+    public Balance(Friend friend, float value){
+        this.friend = friend;
         this.value = value;
+    }
+
+    public Friend getFriend(){
+        return this.friend;
     }
     public float getValue(){
         return this.value;
-    }
-    public void setFriend(Friend friend){
-        this.friend = friend;
-    }
-    public Friend getFriend(){
-        return this.friend;
     }
 }
