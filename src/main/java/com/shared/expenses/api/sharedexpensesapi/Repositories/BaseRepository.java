@@ -10,4 +10,5 @@ public interface BaseRepository<T, ID> extends Repository<T, ID>{
 
   long count(); 
   
+  T findById( Long id);
 }
