@@ -2,7 +2,6 @@ package com.shared.expenses.api.sharedexpensesapi.Services;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.shared.expenses.api.sharedexpensesapi.Models.Balance;
 import com.shared.expenses.api.sharedexpensesapi.Models.Expense;
 import com.shared.expenses.api.sharedexpensesapi.Models.Friend;
