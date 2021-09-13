@@ -1,5 +1,6 @@
 package com.shared.expenses.api.sharedexpensesapi.Models;
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,6 +33,14 @@ public class Expense {
         this.date  = LocalDate.parse(date);
         this.friend = friend;
     }
+
+    public static float sumtotalExpenses(List<Expense> expenses){
+        float totalExpenses = 0.00f;
+        for (Expense expense : expenses){
+            totalExpenses += expense.getValue();
+        }
+        return totalExpenses;
+    } 
     public Expense(){}
     public Long getId(){ return id;}
     public float getValue(){ return value;}
