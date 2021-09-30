@@ -1,8 +1,9 @@
 # Shared-Expenses-API
 Es una API REST desarrollada poder visualizar y gestionar los gastos compartidos de un grupo de amigos.
-• IDE Visual Studio Code
+## Requisitos no funcionales
+• IDE Visual Studio Code  
 •	Dependencias gestionadas con **Maven**  
-•	JDK 11
+•	JDK 11  
 •	Lenguaje de programación **Java**  
 •	Framework **Spring boot**  
 •	Capa de persistencia gestionada con **Spring Data**
