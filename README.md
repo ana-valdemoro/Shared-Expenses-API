@@ -6,7 +6,8 @@ Es una API REST desarrollada poder visualizar y gestionar los gastos compartidos
 •	JDK 11  
 •	Lenguaje de programación **Java**  
 •	Framework **Spring boot**  
-•	Capa de persistencia gestionada con **Spring Data**
+•	Capa de persistencia gestionada con **Spring Data**  
+•	Bases de datos en memoria **H2**
 ## Contenido	
 Este proyecto tiene una rama principal (master) sobre la que se han ido añadiendo las funcionalidades y requisitos de la aplicación.  
 La estructura del proyecto se subdivide en las siguientes carpetas:   
